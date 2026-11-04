@@ -1,7 +1,73 @@
 [gd_scene format=3 uid="uid://dksqg4ncm2cfu"]
 
 [ext_resource type="Texture2D" uid="uid://5h7171hovqp2" path="res://Textures/Placeholder/Taps.png" id="1_dfmss"]
+[ext_resource type="Script" uid="uid://do7sv6fccar1d" path="res://Scripts/taps_controller.gd" id="2_5ps5a"]
+[ext_resource type="Texture2D" uid="uid://d00qreoucla2g" path="res://Textures/Placeholder/GlassEmpty.png" id="2_hph73"]
+[ext_resource type="Texture2D" uid="uid://djo55e31gbvop" path="res://Textures/Placeholder/GlassFull.png" id="3_5ps5a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nk0g4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hph73")
+}],
+"loop": 0,
+"name": &"Empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5ps5a")
+}],
+"loop": 0,
+"name": &"Full",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk0g4"]
+size = Vector2(35, 41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nk0g4"]
 
 [node name="Taps" type="Sprite2D" unique_id=1664025334]
-scale = Vector2(5, 5)
 texture = ExtResource("1_dfmss")
+script = ExtResource("2_5ps5a")
+
+[node name="BeerGlass" type="AnimatedSprite2D" parent="." unique_id=1485738930]
+position = Vector2(-14, 8)
+sprite_frames = SubResource("SpriteFrames_nk0g4")
+animation = &"Empty"
+
+[node name="CiderGlass" type="AnimatedSprite2D" parent="." unique_id=797193481]
+position = Vector2(14, 8)
+sprite_frames = SubResource("SpriteFrames_nk0g4")
+animation = &"Empty"
+
+[node name="PlaceBeer" type="Area2D" parent="." unique_id=381183307]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceBeer" unique_id=1007252319]
+position = Vector2(-17.5, 13.5)
+shape = SubResource("RectangleShape2D_nk0g4")
+
+[node name="PlaceCider" type="Area2D" parent="." unique_id=907026649]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceCider" unique_id=1192714230]
+position = Vector2(17.5, 13.5)
+shape = SubResource("RectangleShape2D_nk0g4")
+
+[node name="FillBeer" type="Area2D" parent="." unique_id=1567449591]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FillBeer" unique_id=707453128]
+position = Vector2(-13.5, -28.5)
+shape = SubResource("CircleShape2D_nk0g4")
+
+[node name="FillCider" type="Area2D" parent="." unique_id=1225930424]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FillCider" unique_id=992266211]
+position = Vector2(13.5, -28.5)
+shape = SubResource("CircleShape2D_nk0g4")
+
+[connection signal="mouse_entered" from="PlaceBeer" to="." method="_on_place_beer_mouse_entered"]
+[connection signal="mouse_exited" from="PlaceBeer" to="." method="_on_place_beer_mouse_exited"]
+[connection signal="mouse_entered" from="PlaceCider" to="." method="_on_place_cider_mouse_entered"]
+[connection signal="mouse_exited" from="PlaceCider" to="." method="_on_place_cider_mouse_exited"]

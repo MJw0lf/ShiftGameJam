@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://d00qreoucla2g" path="res://Textures/Placeholder/GlassEmpty.png" id="1_x6wxr"]
 [ext_resource type="Script" uid="uid://cwhloojxav35f" path="res://Scripts/glass_controller.gd" id="2_wdcnx"]
 
-[node name="GlassEmpty" type="Sprite2D" unique_id=537727585]
+[node name="GlassEmpty" type="Sprite2D" unique_id=537727585 groups=["Drink"]]
 texture = ExtResource("1_x6wxr")
 script = ExtResource("2_wdcnx")

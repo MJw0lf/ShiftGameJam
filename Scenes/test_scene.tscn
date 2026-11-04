@@ -19,3 +19,4 @@ scale = Vector2(5, 5)
 
 [node name="Taps" parent="." unique_id=1664025334 instance=ExtResource("4_hb2xm")]
 position = Vector2(960, 330)
+scale = Vector2(5, 5)

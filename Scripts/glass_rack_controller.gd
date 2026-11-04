@@ -2,7 +2,7 @@ extends Sprite2D
 
 @onready var glasses : Array[Sprite2D] = [$GlassEmpty1, $GlassEmpty2, $GlassEmpty3]
 
-var num_of_glasses : int = 1
+var num_of_glasses : int = 3
 var can_be_clicked : bool = false
 
 func _ready() -> void:
