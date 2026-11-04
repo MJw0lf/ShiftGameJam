@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bu0t37vw4fqcx"]
+
+[ext_resource type="Texture2D" uid="uid://c7ik5tpcyrs7h" path="res://Textures/Placeholder/GlassRack.png" id="1_nhftb"]
+[ext_resource type="Texture2D" uid="uid://d00qreoucla2g" path="res://Textures/Placeholder/GlassEmpty.png" id="2_a73oo"]
+[ext_resource type="Script" uid="uid://gvmphbwrbmw3" path="res://Scripts/glass_rack_controller.gd" id="2_bdll1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk0g4"]
+size = Vector2(90, 31)
+
+[node name="GlassRack" type="Sprite2D" unique_id=1347275548]
+texture = ExtResource("1_nhftb")
+script = ExtResource("2_bdll1")
+
+[node name="GlassEmpty1" type="Sprite2D" parent="." unique_id=1953711604]
+position = Vector2(-30, -9)
+rotation = 3.1415927
+texture = ExtResource("2_a73oo")
+
+[node name="GlassEmpty2" type="Sprite2D" parent="." unique_id=2073667028]
+position = Vector2(0, -9)
+rotation = 3.1415927
+texture = ExtResource("2_a73oo")
+
+[node name="GlassEmpty3" type="Sprite2D" parent="." unique_id=1624530609]
+position = Vector2(30, -9)
+rotation = 3.1415927
+texture = ExtResource("2_a73oo")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1626407135]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=857915151]
+position = Vector2(0, -8.5)
+shape = SubResource("RectangleShape2D_nk0g4")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
