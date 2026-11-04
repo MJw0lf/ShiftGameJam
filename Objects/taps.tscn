@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dksqg4ncm2cfu"]
+
+[ext_resource type="Texture2D" uid="uid://5h7171hovqp2" path="res://Textures/Placeholder/Taps.png" id="1_dfmss"]
+
+[node name="Taps" type="Sprite2D" unique_id=1664025334]
+scale = Vector2(5, 5)
+texture = ExtResource("1_dfmss")
