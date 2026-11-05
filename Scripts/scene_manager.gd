@@ -6,24 +6,44 @@ var glass_instance : PackedScene = preload("res://Objects/glass.tscn")
 var glass_rack : Sprite2D
 var taps : Sprite2D
 
+var people : Array[Sprite2D] = []
+const people_pos : Array[Vector2] = [Vector2(192, 325), Vector2(576, 325), Vector2(960, 325)]
+@onready var person_instance : PackedScene = preload("res://Objects/person.tscn")
+
+var clicked : bool = false
+
 func _ready() -> void:
 	glass_rack = find_child("GlassRack")
 	taps = find_child("Taps")
+	
+	add_people()
 
 func _physics_process(delta: float) -> void:
+	clicked = false
 	if Input.is_action_just_pressed("click"):
 		if glass_rack:
+			clicked = true
 			if glass_rack.can_be_clicked:
 				clicked_glass_rack()
-		if taps:
+			else:
+				clicked = false
+		if taps and !clicked:
+			clicked = true
 			if taps.can_click_place_beer:
 				clicked_taps_beer()
-			if taps.can_click_place_cider:
+			elif taps.can_click_place_cider:
 				clicked_taps_cider()
-			if taps.can_click_pour_beer:
+			elif taps.can_click_pour_beer:
 				taps.fill_beer()
-			if taps.can_click_pour_cider:
+			elif taps.can_click_pour_cider:
 				taps.fill_cider()
+			else:
+				clicked = false
+		if !clicked:
+			for person in people:
+				if person:
+					if person.can_be_clicked:
+						clicked_person(person)
 
 func clicked_glass_rack() -> void:
 	if hand_is_full():
@@ -55,10 +75,22 @@ func clicked_taps_cider() -> void:
 			in_hand = taps.pick_up_cider()
 			in_hand.set_in_hand()
 
+func clicked_person(person : Sprite2D) -> void:
+	if hand_is_full():
+		if person.is_right_drink(in_hand.current_drink):
+			empty_hand()
+
 func pick_up_glass() -> void:
 	if !hand_is_full():
 		in_hand = glass_instance.instantiate()
 		add_child(in_hand)
+
+func add_people() -> void:
+	for pos in people_pos:
+		var add_person : Sprite2D = person_instance.instantiate()
+		add_child(add_person)
+		add_person.position = pos
+		people.push_back(add_person)
 
 func hand_is_full() -> bool:
 	return in_hand != null

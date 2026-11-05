@@ -22,3 +22,9 @@ func find_drink(ingredients : Array) -> String:
 				return drink
 	
 	return "NoDrink"
+
+func get_random_drink() -> String:
+	var random_drink : String = drinks.keys()[randi() % drinks.size()]
+	while random_drink == "Empty":
+		random_drink = drinks.keys()[randi() % drinks.size()]
+	return random_drink
