@@ -2,14 +2,14 @@ extends Sprite2D
 
 var is_empty : bool = true
 var current_drink : String = "Empty"
-var ingredients : Array[String] = []
+var ingredients : Array = []
 
 func _ready() -> void:
 	set_in_hand()
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		print_debug(ingredients)
+		print_debug(current_drink)
 
 func set_in_hand() -> void:
 	var viewport_size = get_viewport_rect().size
@@ -24,6 +24,7 @@ func set_empty(state : bool) -> void:
 func add_ingredient(ingredient : String) -> void:
 	ingredients.push_back(ingredient)
 	is_empty = false
+	current_drink = DrinkList.find_drink(ingredients)
 	update_state()
 
 func update_state() -> void:
