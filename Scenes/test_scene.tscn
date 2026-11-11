@@ -4,13 +4,22 @@
 [ext_resource type="Script" uid="uid://dev2xfbyrsafv" path="res://Scripts/scene_manager.gd" id="1_hb2xm"]
 [ext_resource type="PackedScene" uid="uid://bu0t37vw4fqcx" path="res://Objects/glass_rack.tscn" id="2_50ct6"]
 [ext_resource type="PackedScene" uid="uid://dksqg4ncm2cfu" path="res://Objects/taps.tscn" id="4_hb2xm"]
+[ext_resource type="PackedScene" uid="uid://c2oxsrmqrgy2s" path="res://Objects/Alcohol/white_wine.tscn" id="5_ak5v8"]
+[ext_resource type="Script" uid="uid://cx866sb0lsyor" path="res://Scripts/camera_controller.gd" id="5_rdbpf"]
+[ext_resource type="Script" uid="uid://ombss1mccrdw" path="res://Scripts/ui_controller.gd" id="6_d3awe"]
+[ext_resource type="Texture2D" uid="uid://y6reho76lb53" path="res://Textures/Placeholder/SideArrow.png" id="6_oho3u"]
 
 [node name="TestScene" type="Node2D" unique_id=1980446807]
 script = ExtResource("1_hb2xm")
 
+[node name="Background" type="Sprite2D" parent="." unique_id=1745237104]
+position = Vector2(1799, -3.0000372)
+scale = Vector2(5.6260867, 12.764706)
+texture = ExtResource("1_3dogw")
+
 [node name="Bar" type="Sprite2D" parent="." unique_id=2062929934]
-position = Vector2(576, 570)
-scale = Vector2(5.1, 5.1)
+position = Vector2(1215.2499, 570)
+scale = Vector2(10.658695, 5.1)
 texture = ExtResource("1_3dogw")
 
 [node name="GlassRack" parent="." unique_id=1347275548 instance=ExtResource("2_50ct6")]
@@ -20,3 +29,50 @@ scale = Vector2(5, 5)
 [node name="Taps" parent="." unique_id=1664025334 instance=ExtResource("4_hb2xm")]
 position = Vector2(960, 330)
 scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=945884821]
+position = Vector2(576, 324)
+script = ExtResource("5_rdbpf")
+
+[node name="UI" type="Control" parent="Camera2D" unique_id=1606063843]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_d3awe")
+
+[node name="GoRight" type="TextureButton" parent="Camera2D/UI" unique_id=168230504]
+layout_mode = 0
+offset_left = 1023.0
+offset_top = 518.0
+offset_right = 1063.0
+offset_bottom = 558.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("6_oho3u")
+stretch_mode = 5
+
+[node name="GoLeft" type="TextureButton" parent="Camera2D/UI" unique_id=1080805040]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 642.0
+offset_right = 168.0
+offset_bottom = 682.0
+rotation = 3.1415927
+scale = Vector2(3, 3)
+texture_normal = ExtResource("6_oho3u")
+stretch_mode = 5
+
+[node name="WhiteWine" parent="." unique_id=2001502966 instance=ExtResource("5_ak5v8")]
+position = Vector2(1238.0001, 325)
+scale = Vector2(5, 5)
+
+[connection signal="pressed" from="Camera2D/UI/GoRight" to="Camera2D/UI" method="_on_go_right_pressed"]
+[connection signal="pressed" from="Camera2D/UI/GoLeft" to="Camera2D/UI" method="_on_go_left_pressed"]

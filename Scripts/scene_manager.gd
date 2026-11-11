@@ -12,6 +12,8 @@ const people_pos : Array[Vector2] = [Vector2(192, 325), Vector2(576, 325), Vecto
 
 var clicked : bool = false
 
+var camera_pos : Vector2 = Vector2.ZERO
+
 func _ready() -> void:
 	glass_rack = find_child("GlassRack")
 	taps = find_child("Taps")
@@ -63,7 +65,7 @@ func clicked_taps_beer() -> void:
 	else:
 		if !taps.can_place_beer():
 			in_hand = taps.pick_up_beer()
-			in_hand.set_in_hand()
+			in_hand.set_in_hand(camera_pos.x)
 
 func clicked_taps_cider() -> void:
 	if hand_is_full():
@@ -73,7 +75,7 @@ func clicked_taps_cider() -> void:
 	else:
 		if !taps.can_place_cider():
 			in_hand = taps.pick_up_cider()
-			in_hand.set_in_hand()
+			in_hand.set_in_hand(camera_pos.x)
 
 func clicked_person(person : Sprite2D) -> void:
 	if hand_is_full():
@@ -84,6 +86,7 @@ func pick_up_glass() -> void:
 	if !hand_is_full():
 		in_hand = glass_instance.instantiate()
 		add_child(in_hand)
+		in_hand.set_in_hand(camera_pos.x)
 
 func add_people() -> void:
 	for pos in people_pos:
@@ -91,6 +94,11 @@ func add_people() -> void:
 		add_child(add_person)
 		add_person.position = pos
 		people.push_back(add_person)
+
+func camera_moved(new_pos : Vector2) -> void:
+	camera_pos = new_pos
+	if hand_is_full():
+		in_hand.set_in_hand(camera_pos.x)
 
 func hand_is_full() -> bool:
 	return in_hand != null
