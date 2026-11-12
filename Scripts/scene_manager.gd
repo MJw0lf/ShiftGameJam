@@ -100,6 +100,11 @@ func camera_moved(new_pos : Vector2) -> void:
 	if hand_is_full():
 		in_hand.set_in_hand(camera_pos.x)
 
+func add_ingredient(ingredient : String) -> void:
+	if hand_is_full():
+		if !in_hand.has_ingredient(ingredient):
+			in_hand.add_ingredient(ingredient)
+
 func hand_is_full() -> bool:
 	return in_hand != null
 

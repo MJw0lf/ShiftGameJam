@@ -36,3 +36,10 @@ func update_state() -> void:
 		texture = load("res://Textures/Placeholder/GlassEmpty.png")
 	else:
 		texture = load("res://Textures/Placeholder/GlassFull.png")
+
+func has_ingredient(test_ingredient : String) -> bool:
+	for ingredient in ingredients:
+		if test_ingredient == ingredient:
+			return true
+	
+	return false

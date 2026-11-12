@@ -9,6 +9,7 @@ size = Vector2(12.000002, 43.000004)
 [node name="WhiteWine" type="Sprite2D" unique_id=2001502966]
 texture = ExtResource("1_yq481")
 script = ExtResource("2_6yle2")
+alcohol_name = "WhiteWine"
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1521537352]
 

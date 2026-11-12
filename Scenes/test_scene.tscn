@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cx866sb0lsyor" path="res://Scripts/camera_controller.gd" id="5_rdbpf"]
 [ext_resource type="Script" uid="uid://ombss1mccrdw" path="res://Scripts/ui_controller.gd" id="6_d3awe"]
 [ext_resource type="Texture2D" uid="uid://y6reho76lb53" path="res://Textures/Placeholder/SideArrow.png" id="6_oho3u"]
+[ext_resource type="PackedScene" uid="uid://os8adywn83ki" path="res://Objects/Alcohol/red_wine.tscn" id="9_d3awe"]
 
 [node name="TestScene" type="Node2D" unique_id=1980446807]
 script = ExtResource("1_hb2xm")
@@ -73,6 +74,9 @@ stretch_mode = 5
 [node name="WhiteWine" parent="." unique_id=2001502966 instance=ExtResource("5_ak5v8")]
 position = Vector2(1238.0001, 325)
 scale = Vector2(5, 5)
+
+[node name="RedWine" parent="." unique_id=1705242513 instance=ExtResource("9_d3awe")]
+position = Vector2(1319.0001, 324.00003)
 
 [connection signal="pressed" from="Camera2D/UI/GoRight" to="Camera2D/UI" method="_on_go_right_pressed"]
 [connection signal="pressed" from="Camera2D/UI/GoLeft" to="Camera2D/UI" method="_on_go_left_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://os8adywn83ki"]
+
+[ext_resource type="Script" uid="uid://05y2kjasjnnx" path="res://Scripts/alcohol_controller.gd" id="1_frckh"]
+[ext_resource type="Texture2D" uid="uid://cn03qug3w8fu4" path="res://Textures/Placeholder/Alcohol/0001.png" id="1_j67if"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j67if"]
+size = Vector2(12.000002, 43.000004)
+
+[node name="RedWine" type="Sprite2D" unique_id=1705242513]
+modulate = Color(1, 0.12156863, 0.12156863, 1)
+scale = Vector2(5, 5)
+texture = ExtResource("1_j67if")
+script = ExtResource("1_frckh")
+alcohol_name = "RedWine"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=498829353]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2039298890]
+position = Vector2(9.685759e-08, 0.49999952)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_j67if")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]

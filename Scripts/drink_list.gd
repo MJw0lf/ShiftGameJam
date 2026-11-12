@@ -3,7 +3,9 @@ extends Node
 const drinks : Dictionary[String, Array] = {
 	"Empty" : [],
 	"Beer" : ["Beer"],
-	"Cider" : ["Cider"]
+	"Cider" : ["Cider"],
+	"RedWine" : ["RedWine"],
+	"WhiteWine" : ["WhiteWine"]
 }
 
 func find_drink(ingredients : Array) -> String:
