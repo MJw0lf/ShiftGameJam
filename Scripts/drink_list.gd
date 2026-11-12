@@ -5,7 +5,11 @@ const drinks : Dictionary[String, Array] = {
 	"Beer" : ["Beer"],
 	"Cider" : ["Cider"],
 	"RedWine" : ["RedWine"],
-	"WhiteWine" : ["WhiteWine"]
+	"WhiteWine" : ["WhiteWine"],
+	"Vodka Shot" : ["Vodka"],
+	"Tequila Shot" : ["Tequila"],
+	"Gin" : ["Gin"],
+	"Rum" : ["Rum"]
 }
 
 func find_drink(ingredients : Array) -> String:

@@ -9,6 +9,11 @@
 [ext_resource type="Script" uid="uid://ombss1mccrdw" path="res://Scripts/ui_controller.gd" id="6_d3awe"]
 [ext_resource type="Texture2D" uid="uid://y6reho76lb53" path="res://Textures/Placeholder/SideArrow.png" id="6_oho3u"]
 [ext_resource type="PackedScene" uid="uid://os8adywn83ki" path="res://Objects/Alcohol/red_wine.tscn" id="9_d3awe"]
+[ext_resource type="PackedScene" uid="uid://wauhme7fp67k" path="res://Objects/Alcohol/vodka.tscn" id="10_yglu3"]
+[ext_resource type="PackedScene" uid="uid://dsma3ynabrhjv" path="res://Objects/Alcohol/gin.tscn" id="11_bwjpn"]
+[ext_resource type="PackedScene" uid="uid://cf4dr6g4hmu0v" path="res://Objects/Alcohol/rum.tscn" id="12_4blnk"]
+[ext_resource type="PackedScene" uid="uid://bb76suaf44e63" path="res://Objects/Alcohol/tequila.tscn" id="13_tnimv"]
+[ext_resource type="PackedScene" uid="uid://cew00rcfkvj2s" path="res://Objects/Alcohol/soda_water.tscn" id="14_tnimv"]
 
 [node name="TestScene" type="Node2D" unique_id=1980446807]
 script = ExtResource("1_hb2xm")
@@ -77,6 +82,27 @@ scale = Vector2(5, 5)
 
 [node name="RedWine" parent="." unique_id=1705242513 instance=ExtResource("9_d3awe")]
 position = Vector2(1319.0001, 324.00003)
+scale = Vector2(5, 5)
+
+[node name="Vodka" parent="." unique_id=976820995 instance=ExtResource("10_yglu3")]
+position = Vector2(1592, 331.00003)
+scale = Vector2(5, 5)
+
+[node name="Gin" parent="." unique_id=1560322455 instance=ExtResource("11_bwjpn")]
+position = Vector2(1687.0001, 371.00003)
+scale = Vector2(5, 5)
+
+[node name="Rum" parent="." unique_id=1172441223 instance=ExtResource("12_4blnk")]
+position = Vector2(1796.0001, 371.00003)
+scale = Vector2(5, 5)
+
+[node name="Tequila" parent="." unique_id=1264578827 instance=ExtResource("13_tnimv")]
+position = Vector2(1907, 370)
+scale = Vector2(5, 5)
+
+[node name="SodaWater" parent="." unique_id=2124837610 instance=ExtResource("14_tnimv")]
+position = Vector2(2096.0002, 338.00003)
+scale = Vector2(15, 15)
 
 [connection signal="pressed" from="Camera2D/UI/GoRight" to="Camera2D/UI" method="_on_go_right_pressed"]
 [connection signal="pressed" from="Camera2D/UI/GoLeft" to="Camera2D/UI" method="_on_go_left_pressed"]
