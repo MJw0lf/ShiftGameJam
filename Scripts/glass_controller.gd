@@ -11,6 +11,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
+		print_debug(ingredients)
 		print_debug(current_drink)
 
 func set_in_hand(new_pos : float) -> void:
@@ -18,7 +19,7 @@ func set_in_hand(new_pos : float) -> void:
 	
 	var viewport_size = get_viewport_rect().size
 	
-	position = Vector2(in_hand_pos_x, (viewport_size.y/5) * 4)
+	position = Vector2(in_hand_pos_x, viewport_size.y)
 	scale = Vector2(10, 10)
 
 func set_empty(state : bool) -> void:
