@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://b3cryk238xvmh"]
+
+[ext_resource type="Script" uid="uid://ombss1mccrdw" path="res://Scripts/ui_controller.gd" id="1_qdvrb"]
+[ext_resource type="Texture2D" uid="uid://y6reho76lb53" path="res://Textures/Placeholder/SideArrow.png" id="2_nf4gj"]
+[ext_resource type="Script" uid="uid://dfrby15w1rt2q" path="res://Scripts/drink_ui_controller.gd" id="3_2246s"]
+[ext_resource type="PackedScene" uid="uid://cgip7k14u5umx" path="res://UI/drink_text.tscn" id="4_q7pk6"]
+
+[node name="UI" type="Control" unique_id=115048935]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qdvrb")
+
+[node name="GoRight" type="TextureButton" parent="." unique_id=1164258200]
+layout_mode = 0
+offset_left = 1023.0
+offset_top = 518.0
+offset_right = 1063.0
+offset_bottom = 558.0
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_nf4gj")
+stretch_mode = 5
+
+[node name="GoLeft" type="TextureButton" parent="." unique_id=1394515379]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 642.0
+offset_right = 168.0
+offset_bottom = 682.0
+rotation = 3.1415927
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_nf4gj")
+stretch_mode = 5
+
+[node name="DrinkUI" type="Control" parent="." unique_id=751025206]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_2246s")
+
+[node name="Background" type="ColorRect" parent="DrinkUI" unique_id=873523652]
+modulate = Color(0, 0, 0, 0.3254902)
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Paper" type="ColorRect" parent="DrinkUI" unique_id=1790216820]
+layout_mode = 0
+offset_left = 329.0
+offset_top = 59.0
+offset_right = 850.0
+offset_bottom = 534.0
+
+[node name="MarginContainer" type="MarginContainer" parent="DrinkUI/Paper" unique_id=1531078635]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DrinkUI/Paper/MarginContainer" unique_id=1725607056]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="DrinkUI/Paper/MarginContainer/VBoxContainer" unique_id=677351449]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Drink Menu"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer" unique_id=1334035020]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1956833766]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="DrinkText" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=224348729 instance=ExtResource("4_q7pk6")]
+layout_mode = 2
+
+[connection signal="pressed" from="GoRight" to="." method="_on_go_right_pressed"]
+[connection signal="pressed" from="GoLeft" to="." method="_on_go_left_pressed"]

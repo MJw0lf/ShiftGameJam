@@ -7,10 +7,13 @@ var current_pos : int = 0
 
 @onready var right_button : TextureButton = $GoRight
 @onready var left_button : TextureButton = $GoLeft
+@onready var drink_ui : Control = $DrinkUI
 
 func _ready() -> void:
 	camera = get_parent()
 	update_buttons()
+	
+	drink_ui.visible = false
 
 func _on_go_right_pressed() -> void:
 	if camera:

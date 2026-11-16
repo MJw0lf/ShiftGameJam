@@ -2,7 +2,7 @@ extends Sprite2D
 class_name Alcohol
 
 @export var alcohol_name : String = "Beer"
-var can_click : bool = false
+var can_be_clicked : bool = false
 var normal_pos : Vector2
 const up_by : float = 10
 
@@ -20,20 +20,20 @@ func _ready() -> void:
 	name_label.global_position = global_position+Vector2(0, -100)
 
 func _physics_process(delta: float) -> void:
-	if can_click and Input.is_action_just_pressed("click"):
+	if can_be_clicked and Input.is_action_just_pressed("click"):
 		if scene_manager:
 			scene_manager.add_ingredient(alcohol_name)
 		print_debug(alcohol_name + " just clicked")
 
 func _on_mouse_entered() -> void:
-	can_click = true
+	can_be_clicked = true
 	position.y -= up_by
 	
 	name_label.visible = true
 	name_label.text = alcohol_name
 
 func _on_mouse_exited() -> void:
-	can_click = false
+	can_be_clicked = false
 	position = normal_pos
 	
 	name_label.visible = false

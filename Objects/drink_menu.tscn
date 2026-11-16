@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bttx5dp2tub24"]
+
+[ext_resource type="Texture2D" uid="uid://d1cqtujjdvynd" path="res://Textures/Placeholder/DrinkMenu.png" id="1_4cu80"]
+[ext_resource type="Script" uid="uid://b5j7pqs0kijh8" path="res://Scripts/drink_menu_controller.gd" id="2_a8ayx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nk0g4"]
+size = Vector2(118, 128)
+
+[node name="DrinkMenu" type="Sprite2D" unique_id=337659513]
+texture = ExtResource("1_4cu80")
+script = ExtResource("2_a8ayx")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1069982281]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1476864844]
+shape = SubResource("RectangleShape2D_nk0g4")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

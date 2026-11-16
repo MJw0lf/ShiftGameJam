@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cgip7k14u5umx"]
+
+[node name="DrinkText" type="Label" unique_id=224348729]
+custom_maximum_size = Vector2(241, 300)
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Drink 1 : Ingredient 1, Ingredient 2, Ingredient 3"
+autowrap_mode = 2
