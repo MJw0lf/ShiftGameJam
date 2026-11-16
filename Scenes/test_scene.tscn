@@ -14,6 +14,11 @@
 [ext_resource type="PackedScene" uid="uid://cf4dr6g4hmu0v" path="res://Objects/Alcohol/rum.tscn" id="12_4blnk"]
 [ext_resource type="PackedScene" uid="uid://bb76suaf44e63" path="res://Objects/Alcohol/tequila.tscn" id="13_tnimv"]
 [ext_resource type="PackedScene" uid="uid://cew00rcfkvj2s" path="res://Objects/Alcohol/soda_water.tscn" id="14_tnimv"]
+[ext_resource type="PackedScene" uid="uid://dfn4rmvwi8rny" path="res://Objects/Alcohol/lemon_juice.tscn" id="15_i0miu"]
+[ext_resource type="PackedScene" uid="uid://clj1n4h1h5jn3" path="res://Objects/Alcohol/lime_juice.tscn" id="16_6bfml"]
+[ext_resource type="PackedScene" uid="uid://br5ue2001m7qj" path="res://Objects/Alcohol/orange_juice.tscn" id="17_0g4ye"]
+[ext_resource type="PackedScene" uid="uid://bdgis57ae35cn" path="res://Objects/Alcohol/tonic_water.tscn" id="18_soh27"]
+[ext_resource type="PackedScene" uid="uid://dpi08wougng0e" path="res://Objects/Alcohol/cola.tscn" id="19_6bfml"]
 
 [node name="TestScene" type="Node2D" unique_id=1980446807]
 script = ExtResource("1_hb2xm")
@@ -85,24 +90,44 @@ position = Vector2(1319.0001, 324.00003)
 scale = Vector2(5, 5)
 
 [node name="Vodka" parent="." unique_id=976820995 instance=ExtResource("10_yglu3")]
-position = Vector2(1592, 331.00003)
+position = Vector2(1415, 368.00003)
 scale = Vector2(5, 5)
 
 [node name="Gin" parent="." unique_id=1560322455 instance=ExtResource("11_bwjpn")]
-position = Vector2(1687.0001, 371.00003)
+position = Vector2(1504, 409.00003)
 scale = Vector2(5, 5)
 
 [node name="Rum" parent="." unique_id=1172441223 instance=ExtResource("12_4blnk")]
-position = Vector2(1796.0001, 371.00003)
+position = Vector2(1609, 411.00003)
 scale = Vector2(5, 5)
 
 [node name="Tequila" parent="." unique_id=1264578827 instance=ExtResource("13_tnimv")]
-position = Vector2(1907, 370)
+position = Vector2(1717.0001, 410)
 scale = Vector2(5, 5)
 
 [node name="SodaWater" parent="." unique_id=2124837610 instance=ExtResource("14_tnimv")]
-position = Vector2(2096.0002, 338.00003)
+position = Vector2(1815, 331)
 scale = Vector2(15, 15)
+
+[node name="LemonJuice" parent="." unique_id=694937599 instance=ExtResource("15_i0miu")]
+position = Vector2(1978.0001, 413)
+scale = Vector2(10, 10)
+
+[node name="LimeJuice" parent="." unique_id=825136650 instance=ExtResource("16_6bfml")]
+position = Vector2(2076, 420)
+scale = Vector2(10, 10)
+
+[node name="OrangeJuice" parent="." unique_id=378351114 instance=ExtResource("17_0g4ye")]
+position = Vector2(2160.0002, 400)
+scale = Vector2(10, 10)
+
+[node name="TonicWater" parent="." unique_id=17050293 instance=ExtResource("18_soh27")]
+position = Vector2(1884.0001, 331.00003)
+scale = Vector2(15, 15)
+
+[node name="Cola" parent="." unique_id=1517502858 instance=ExtResource("19_6bfml")]
+position = Vector2(2228, 419.00003)
+scale = Vector2(10, 10)
 
 [connection signal="pressed" from="Camera2D/UI/GoRight" to="Camera2D/UI" method="_on_go_right_pressed"]
 [connection signal="pressed" from="Camera2D/UI/GoLeft" to="Camera2D/UI" method="_on_go_left_pressed"]

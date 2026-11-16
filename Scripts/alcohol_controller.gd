@@ -16,7 +16,8 @@ func _ready() -> void:
 	scene_manager = get_parent()
 	name_label.visible = false
 	name_label.scale = Vector2.ONE/scale
-	name_label.global_position = global_position+Vector2(0, -50)
+	name_label.offset_transform_position = Vector2(-name_label.size/2)
+	name_label.global_position = global_position+Vector2(0, -100)
 
 func _physics_process(delta: float) -> void:
 	if can_click and Input.is_action_just_pressed("click"):
