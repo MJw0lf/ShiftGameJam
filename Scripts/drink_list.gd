@@ -43,8 +43,12 @@ const drinks : Dictionary[String, Array] = {
 	"Citrus Soda" : ["OrangeJuice", "LemonJuice", "SodaWater"]
 }
 
+var current_level_drinks : Dictionary[String, Array] = {}
+
+func _ready() -> void:
+	current_level_drinks = drinks
+
 func find_drink(ingredients : Array) -> String:
-	
 	for drink in drinks:
 		if drinks[drink].size() == ingredients.size():
 			var is_drink : bool = true
@@ -65,3 +69,9 @@ func get_random_drink() -> String:
 	while random_drink == "Empty":
 		random_drink = drinks.keys()[randi() % drinks.size()]
 	return random_drink
+
+func get_drinks() -> Dictionary[String, Array]:
+	return current_level_drinks
+
+func get_ingredients(drink_name : String) -> Array:
+	return drinks[drink_name]
