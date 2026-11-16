@@ -6,6 +6,7 @@ var glass_instance : PackedScene = preload("res://Objects/glass.tscn")
 var glass_rack : Sprite2D
 var taps : Sprite2D
 var drink_menu : Sprite2D
+var camera : Camera2D
 
 var people : Array[Sprite2D] = []
 const people_pos : Array[Vector2] = [Vector2(192, 325), Vector2(576, 325), Vector2(960, 325)]
@@ -19,6 +20,7 @@ func _ready() -> void:
 	glass_rack = find_child("GlassRack")
 	taps = find_child("Taps")
 	drink_menu = find_child("DrinkMenu")
+	camera = find_child("Camera2D")
 	
 	add_people()
 
@@ -46,7 +48,8 @@ func _physics_process(delta: float) -> void:
 		if drink_menu and !clicked:
 			if drink_menu.can_be_clicked:
 				clicked = true
-				#display drinks_ui
+				if camera:
+					camera.open_drink_ui()
 		if !clicked:
 			for person in people:
 				if person:

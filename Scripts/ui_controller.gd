@@ -38,3 +38,9 @@ func update_buttons() -> void:
 		left_button.visible = false
 	else:
 		left_button.visible = true
+
+func open_drink_ui() -> void:
+	drink_ui.visible = true
+
+func close_drink_ui() -> void:
+	drink_ui.visible = false
