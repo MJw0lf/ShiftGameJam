@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c0whhqtwnmflj" path="res://Textures/Placeholder/Cross.png" id="5_q7pk6"]
 
 [node name="UI" type="Control" unique_id=115048935]
+z_index = 50
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -43,7 +44,6 @@ texture_normal = ExtResource("2_nf4gj")
 stretch_mode = 5
 
 [node name="DrinkUI" type="Control" parent="." unique_id=751025206]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -87,6 +87,7 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer" unique_id=1334035020]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 3
 
 [node name="DrinkContainer" type="GridContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1956833766]
 layout_mode = 2

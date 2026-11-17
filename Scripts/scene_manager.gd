@@ -26,6 +26,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	clicked = false
+	
+	if camera:
+		if camera.is_ui_open():
+			return
+	
 	if Input.is_action_just_pressed("click"):
 		if glass_rack:
 			clicked = true
@@ -110,6 +115,10 @@ func camera_moved(new_pos : Vector2) -> void:
 		in_hand.set_in_hand(camera_pos.x)
 
 func add_ingredient(ingredient : String) -> void:
+	if camera:
+		if camera.is_ui_open():
+			return
+	
 	if hand_is_full():              
 		if !in_hand.has_ingredient(ingredient):
 			in_hand.add_ingredient(ingredient)

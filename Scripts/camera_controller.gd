@@ -17,3 +17,6 @@ func go_to_pos(pos_index : int) -> void:
 
 func open_drink_ui() -> void:
 	ui.open_drink_ui()
+
+func is_ui_open() -> bool:
+	return ui.is_ui_open()

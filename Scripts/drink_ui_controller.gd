@@ -21,10 +21,10 @@ func update_drink_container() -> void:
 			var new_drink_text : String = drink + " : "
 			
 			for drink_index in drink_ingredients.size():
-				if drink_index > 0:
-					new_drink_text += ", "
-				elif drink_index == drink_ingredients.size() - 1 and drink_index != 0:
+				if drink_index == drink_ingredients.size() - 1 and drink_index != 0:
 					new_drink_text += " and "
+				elif drink_index > 0:
+					new_drink_text += ", "
 				new_drink_text += drink_ingredients[drink_index]
 			
 			var new_drink_label : Label = drink_text_instance.instantiate()
