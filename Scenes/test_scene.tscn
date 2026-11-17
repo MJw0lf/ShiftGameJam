@@ -37,7 +37,7 @@ follow_viewport = false
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="backgrounds/backgroundLeft" unique_id=2018129644]
-position = Vector2(462.4, 32.399998)
+position = Vector2(461, 52.4)
 texture = ExtResource("3_0g4ye")
 
 [node name="backgroundRight2" type="Sprite2D" parent="backgrounds" unique_id=239861857]
