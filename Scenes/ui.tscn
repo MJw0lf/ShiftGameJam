@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://y6reho76lb53" path="res://Textures/Placeholder/SideArrow.png" id="2_nf4gj"]
 [ext_resource type="Script" uid="uid://dfrby15w1rt2q" path="res://Scripts/drink_ui_controller.gd" id="3_2246s"]
 [ext_resource type="PackedScene" uid="uid://cgip7k14u5umx" path="res://UI/drink_text.tscn" id="4_q7pk6"]
+[ext_resource type="Texture2D" uid="uid://c0whhqtwnmflj" path="res://Textures/Placeholder/Cross.png" id="5_q7pk6"]
 
 [node name="UI" type="Control" unique_id=115048935]
+z_index = 50
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -42,7 +44,6 @@ texture_normal = ExtResource("2_nf4gj")
 stretch_mode = 5
 
 [node name="DrinkUI" type="Control" parent="." unique_id=751025206]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -86,8 +87,9 @@ horizontal_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer" unique_id=1334035020]
 layout_mode = 2
 size_flags_vertical = 3
+horizontal_scroll_mode = 3
 
-[node name="GridContainer" type="GridContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1956833766]
+[node name="DrinkContainer" type="GridContainer" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1956833766]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -95,8 +97,22 @@ theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
 columns = 2
 
-[node name="DrinkText" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer/GridContainer" unique_id=224348729 instance=ExtResource("4_q7pk6")]
+[node name="DrinkText" parent="DrinkUI/Paper/MarginContainer/VBoxContainer/ScrollContainer/DrinkContainer" unique_id=224348729 instance=ExtResource("4_q7pk6")]
 layout_mode = 2
+
+[node name="CloseButton" type="TextureButton" parent="DrinkUI/Paper" unique_id=533703416]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -49.0
+offset_top = -37.999996
+offset_right = -30.0
+offset_bottom = -18.999996
+grow_horizontal = 0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("5_q7pk6")
 
 [connection signal="pressed" from="GoRight" to="." method="_on_go_right_pressed"]
 [connection signal="pressed" from="GoLeft" to="." method="_on_go_left_pressed"]
+[connection signal="pressed" from="DrinkUI/Paper/CloseButton" to="DrinkUI" method="_close_drink_ui"]
