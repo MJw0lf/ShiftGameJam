@@ -9,7 +9,9 @@ var drink_menu : Sprite2D
 var camera : Camera2D
 
 var people : Array[Sprite2D] = []
-const people_pos : Array[Vector2] = [Vector2(192, 325), Vector2(576, 325), Vector2(960, 325)]
+#height from 325 to 525 inclusive
+#hint to self: Y axis starts from TOP OF SCREEN
+var people_pos : Array[Vector2] = [Vector2(192, randi_range(325,425)), Vector2(576, randi_range(325,425)), Vector2(960, randi_range(325,425))]
 @onready var person_instance : PackedScene = preload("res://Objects/person.tscn")
 
 var clicked : bool = false
@@ -102,6 +104,7 @@ func add_people() -> void:
 		var add_person : Sprite2D = person_instance.instantiate()
 		add_child(add_person)
 		add_person.position = pos
+		add_person.z_index = -1 #the background was appearing in front of characters
 		people.push_back(add_person)
 
 func camera_moved(new_pos : Vector2) -> void:

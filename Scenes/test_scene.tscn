@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bo23wgvy7trp4" path="res://Textures/Placeholder/Bar.png" id="1_3dogw"]
 [ext_resource type="Script" uid="uid://dev2xfbyrsafv" path="res://Scripts/scene_manager.gd" id="1_hb2xm"]
 [ext_resource type="PackedScene" uid="uid://bu0t37vw4fqcx" path="res://Objects/glass_rack.tscn" id="2_50ct6"]
+[ext_resource type="Texture2D" uid="uid://conyk3pmgj4ua" path="res://Textures/objects/background.png" id="3_0g4ye"]
 [ext_resource type="PackedScene" uid="uid://dksqg4ncm2cfu" path="res://Objects/taps.tscn" id="4_hb2xm"]
 [ext_resource type="PackedScene" uid="uid://c2oxsrmqrgy2s" path="res://Objects/Alcohol/white_wine.tscn" id="5_ak5v8"]
 [ext_resource type="Script" uid="uid://cx866sb0lsyor" path="res://Scripts/camera_controller.gd" id="5_rdbpf"]
@@ -23,7 +24,23 @@
 [node name="TestScene" type="Node2D" unique_id=1980446807]
 script = ExtResource("1_hb2xm")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1745237104]
+[node name="backgrounds" type="Node2D" parent="." unique_id=1756834336]
+
+[node name="backgroundLeft" type="Parallax2D" parent="backgrounds" unique_id=383831776]
+z_index = -1
+texture_filter = 1
+scale = Vector2(5, 5)
+scroll_offset = Vector2(5.9999995, 3.9999998)
+repeat_size = Vector2(230, 0)
+repeat_times = 2
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="backgrounds/backgroundLeft" unique_id=2018129644]
+position = Vector2(462.4, 32.399998)
+texture = ExtResource("3_0g4ye")
+
+[node name="backgroundRight2" type="Sprite2D" parent="backgrounds" unique_id=239861857]
 position = Vector2(1799, -3.0000372)
 scale = Vector2(5.6260867, 12.764706)
 texture = ExtResource("1_3dogw")
