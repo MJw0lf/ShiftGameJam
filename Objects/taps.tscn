@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dksqg4ncm2cfu"]
 
-[ext_resource type="Texture2D" uid="uid://5h7171hovqp2" path="res://Textures/Placeholder/Taps.png" id="1_dfmss"]
+[ext_resource type="Texture2D" uid="uid://1mawbcgglb5c" path="res://Textures/objects/Taps.png" id="1_v8qf3"]
 [ext_resource type="Script" uid="uid://do7sv6fccar1d" path="res://Scripts/taps_controller.gd" id="2_5ps5a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nk0g4"]
@@ -9,7 +9,7 @@ size = Vector2(35, 30)
 [sub_resource type="CircleShape2D" id="CircleShape2D_nk0g4"]
 
 [node name="Taps" type="Sprite2D" unique_id=1664025334]
-texture = ExtResource("1_dfmss")
+texture = ExtResource("1_v8qf3")
 script = ExtResource("2_5ps5a")
 
 [node name="PlaceBeer" type="Area2D" parent="." unique_id=381183307]
