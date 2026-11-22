@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0t37vw4fqcx" path="res://Objects/glass_rack.tscn" id="2_50ct6"]
 [ext_resource type="Texture2D" uid="uid://conyk3pmgj4ua" path="res://Textures/objects/background.png" id="3_0g4ye"]
 [ext_resource type="PackedScene" uid="uid://dksqg4ncm2cfu" path="res://Objects/taps.tscn" id="4_hb2xm"]
+[ext_resource type="Texture2D" uid="uid://c8rdeq2wlty8l" path="res://Textures/objects/bar.png" id="4_soh27"]
 [ext_resource type="PackedScene" uid="uid://c2oxsrmqrgy2s" path="res://Objects/Alcohol/white_wine.tscn" id="5_ak5v8"]
 [ext_resource type="Script" uid="uid://cx866sb0lsyor" path="res://Scripts/camera_controller.gd" id="5_rdbpf"]
 [ext_resource type="PackedScene" uid="uid://os8adywn83ki" path="res://Objects/Alcohol/red_wine.tscn" id="9_d3awe"]
@@ -48,7 +49,7 @@ texture = ExtResource("1_3dogw")
 [node name="Bar" type="Sprite2D" parent="." unique_id=2062929934]
 position = Vector2(1215.2499, 570)
 scale = Vector2(10.658695, 5.1)
-texture = ExtResource("1_3dogw")
+texture = ExtResource("4_soh27")
 
 [node name="GlassRack" parent="." unique_id=1347275548 instance=ExtResource("2_50ct6")]
 position = Vector2(245, 456)
