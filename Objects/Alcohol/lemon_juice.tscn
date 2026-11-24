@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dfn4rmvwi8rny"]
 
-[ext_resource type="Texture2D" uid="uid://bspdemsdgin1d" path="res://Textures/Placeholder/Alcohol/Liquor Bottle 1.png" id="1_tfeka"]
+[ext_resource type="Texture2D" uid="uid://wfy0rgtoexkj" path="res://Textures/bottles/LemonJuice.png" id="1_tfeka"]
 [ext_resource type="Script" uid="uid://05y2kjasjnnx" path="res://Scripts/alcohol_controller.gd" id="2_mt2un"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xsw8f"]
-size = Vector2(9.000001, 15.000002)
+size = Vector2(14.000002, 43.000004)
 
 [node name="LemonJuice" type="Sprite2D" unique_id=976820995]
 texture = ExtResource("1_tfeka")
@@ -14,7 +14,7 @@ alcohol_name = "LemonJuice"
 [node name="Area2D" type="Area2D" parent="." unique_id=1570791893]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1224046382]
-position = Vector2(-5.9604645e-08, -5.9604645e-08)
+position = Vector2(2.3841858e-07, 1.5)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_xsw8f")
 
