@@ -87,7 +87,7 @@ scale = Vector2(5, 5)
 
 [node name="SodaWater" parent="." unique_id=2124837610 instance=ExtResource("14_tnimv")]
 position = Vector2(1815, 331)
-scale = Vector2(15, 15)
+scale = Vector2(5, 5)
 
 [node name="LemonJuice" parent="." unique_id=694937599 instance=ExtResource("15_i0miu")]
 position = Vector2(1978.0001, 413)
@@ -102,8 +102,8 @@ position = Vector2(2160.0002, 400)
 scale = Vector2(10, 10)
 
 [node name="TonicWater" parent="." unique_id=17050293 instance=ExtResource("18_soh27")]
-position = Vector2(1884.0001, 331.00003)
-scale = Vector2(15, 15)
+position = Vector2(1891, 331.00003)
+scale = Vector2(5, 5)
 
 [node name="Cola" parent="." unique_id=1517502858 instance=ExtResource("19_6bfml")]
 position = Vector2(2228, 419.00003)
