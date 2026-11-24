@@ -53,6 +53,12 @@ position = Vector2(1799, -3.0000372)
 scale = Vector2(5.6260867, 12.764706)
 texture = ExtResource("1_3dogw")
 
+[node name="backgroundRight3" type="Sprite2D" parent="backgrounds" unique_id=1103654781]
+z_index = -1
+position = Vector2(-647, -43.999996)
+scale = Vector2(5.6260867, 12.764706)
+texture = ExtResource("1_3dogw")
+
 [node name="GlassRack" parent="." unique_id=1347275548 instance=ExtResource("2_50ct6")]
 position = Vector2(245, 456)
 scale = Vector2(5, 5)

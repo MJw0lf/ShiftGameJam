@@ -2,8 +2,8 @@ extends Control
 
 var camera : Camera2D
 
-const max_amt_of_pos : int = 2
-var current_pos : int = 0
+const max_amt_of_pos : int = 3
+var current_pos : int = 1
 
 @onready var right_button : TextureButton = $GoRight
 @onready var left_button : TextureButton = $GoLeft
