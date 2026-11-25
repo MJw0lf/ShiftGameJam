@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dev2xfbyrsafv" path="res://Scripts/scene_manager.gd" id="1_hb2xm"]
 [ext_resource type="PackedScene" uid="uid://bu0t37vw4fqcx" path="res://Objects/glass_rack.tscn" id="2_50ct6"]
 [ext_resource type="Texture2D" uid="uid://conyk3pmgj4ua" path="res://Textures/objects/background.png" id="3_0g4ye"]
+[ext_resource type="Texture2D" uid="uid://c0hvj5wjhuluk" path="res://Textures/objects/shelf.png" id="4_733rx"]
 [ext_resource type="PackedScene" uid="uid://dksqg4ncm2cfu" path="res://Objects/taps.tscn" id="4_hb2xm"]
 [ext_resource type="Texture2D" uid="uid://y5uaosn3hfmn" path="res://Textures/objects/bar.png" id="4_soh27"]
 [ext_resource type="PackedScene" uid="uid://c2oxsrmqrgy2s" path="res://Objects/Alcohol/white_wine.tscn" id="5_ak5v8"]
@@ -49,9 +50,9 @@ texture = ExtResource("4_soh27")
 
 [node name="backgroundRight2" type="Sprite2D" parent="backgrounds" unique_id=239861857]
 z_index = -1
-position = Vector2(1799, -3.0000372)
-scale = Vector2(5.6260867, 12.764706)
-texture = ExtResource("1_3dogw")
+position = Vector2(1727, 144.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("4_733rx")
 
 [node name="backgroundRight3" type="Sprite2D" parent="backgrounds" unique_id=1103654781]
 z_index = -1
@@ -68,55 +69,55 @@ position = Vector2(960, 330)
 scale = Vector2(5, 5)
 
 [node name="WhiteWine" parent="." unique_id=2001502966 instance=ExtResource("5_ak5v8")]
-position = Vector2(1238.0001, 325)
+position = Vector2(1224, 140.00002)
 scale = Vector2(5, 5)
 
 [node name="RedWine" parent="." unique_id=1705242513 instance=ExtResource("9_d3awe")]
-position = Vector2(1319.0001, 324.00003)
+position = Vector2(1295.0001, 142.00002)
 scale = Vector2(5, 5)
 
 [node name="Vodka" parent="." unique_id=976820995 instance=ExtResource("10_yglu3")]
-position = Vector2(1377, 367)
+position = Vector2(1422.0001, 137.00002)
 scale = Vector2(5, 5)
 
 [node name="Gin" parent="." unique_id=1560322455 instance=ExtResource("11_bwjpn")]
-position = Vector2(1504, 409.00003)
+position = Vector2(1574.0001, 138.00003)
 scale = Vector2(5, 5)
 
 [node name="Rum" parent="." unique_id=1172441223 instance=ExtResource("12_4blnk")]
-position = Vector2(1609, 411.00003)
+position = Vector2(1723.0001, 137.00006)
 scale = Vector2(5, 5)
 
 [node name="Tequila" parent="." unique_id=1264578827 instance=ExtResource("13_tnimv")]
-position = Vector2(1717.0001, 410)
+position = Vector2(1836, 130.00003)
 scale = Vector2(5, 5)
 
 [node name="SodaWater" parent="." unique_id=2124837610 instance=ExtResource("14_tnimv")]
-position = Vector2(1815, 331)
+position = Vector2(1258.0001, 328)
 scale = Vector2(5, 5)
 
 [node name="LemonJuice" parent="." unique_id=694937599 instance=ExtResource("15_i0miu")]
-position = Vector2(1978.0001, 413)
+position = Vector2(1918, 324.00003)
 scale = Vector2(5, 5)
 
 [node name="LimeJuice" parent="." unique_id=825136650 instance=ExtResource("16_6bfml")]
-position = Vector2(2076, 420)
+position = Vector2(2004.0002, 325)
 scale = Vector2(5, 5)
 
 [node name="OrangeJuice" parent="." unique_id=378351114 instance=ExtResource("17_0g4ye")]
-position = Vector2(2160.0002, 400)
+position = Vector2(1490.0002, 328)
 scale = Vector2(5, 5)
 
 [node name="TonicWater" parent="." unique_id=17050293 instance=ExtResource("18_soh27")]
-position = Vector2(1891, 331.00003)
+position = Vector2(1343, 335.00003)
 scale = Vector2(5, 5)
 
 [node name="Cola" parent="." unique_id=1517502858 instance=ExtResource("19_6bfml")]
-position = Vector2(2263.0002, 396)
+position = Vector2(1654.0002, 327.00003)
 scale = Vector2(5, 5)
 
 [node name="DrinkMenu" parent="." unique_id=337659513 instance=ExtResource("20_0g4ye")]
-position = Vector2(2109, 103)
+position = Vector2(2212, 319)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=945884821]
 position = Vector2(576, 324)
